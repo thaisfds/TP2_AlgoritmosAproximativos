@@ -1,6 +1,6 @@
 # TP2_AlgoritmosAproximativos
 
-###Organização do Trabalho
+### Organização do Trabalho
 
 - datasets: dados .tsp utilizados para analise e explortação dos algoritmos
 - documentation: guarda o documento final do tabalho juntamente com a tabela de resultados

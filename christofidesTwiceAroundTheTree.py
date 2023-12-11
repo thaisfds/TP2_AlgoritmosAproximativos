@@ -21,11 +21,17 @@ def christofides(A):
     #Eliminar vertices duplicados, substituindo u-w-v por u-v
 
     eulerian_circuit = [edge[0] for edge in nx.eulerian_circuit(MT, 1)]
-    circuit = list(dict.fromkeys(eulerian_circuit)) + [eulerian_circuit[0]]
+    aux = dict.fromkeys(eulerian_circuit)
+    circuit = list(aux) + [eulerian_circuit[0]]
 
 
     #Calcular a soma dos pesos
-    weight = sum(A[circuit[i]][circuit[i + 1]]['weight'] for i in range(len(circuit) - 1))
+
+    weight = 0
+    size = len(circuit) -1
+
+    for i in range(size):
+        weight += A[circuit[i]][circuit[i + 1]]['weight']
 
     return weight
 
@@ -36,10 +42,16 @@ def twiceAroundTheTree(A):
     T = nx.minimum_spanning_tree(A)
 
     #Duplicar arestas = percorrer usando DFS
-    M = list(nx.dfs_preorder_nodes(T, 1))
+    DFS = nx.dfs_preorder_nodes(T, 1)
+    M = list(DFS)
     M.append(M[0]) #adiciona o inicio ao final
 
     #Calcular a soma dos pesos
-    weight = sum(A[M[i]][M[i + 1]]['weight'] for i in range(len(M) - 1))
+
+    weight = 0
+    size = len(M) -1
+
+    for i in range(size):
+        weight += A[M[i]][M[i + 1]]['weight']
 
     return weight

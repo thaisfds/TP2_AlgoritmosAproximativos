@@ -122,7 +122,7 @@ def main():
             #print(f'Executando {dataset}')
 
             if numberNodes <= 20:
-                resultado = runAlgorithm (branchAndBoundTSP, graph, optimal_weight)
+                resultado = runAlgorithm (branchAndBound, graph, optimal_weight)
                 generateCSV(resultado, dataset, numberNodes , 'bnb')
 
             #print('1')
@@ -149,7 +149,7 @@ def main():
         #print(f'Executando {dataset}')
 
         if numberNodes <= 20:
-            resultado = runAlgorithm (branchAndBoundTSP, graph, optimal_weight)
+            resultado = runAlgorithm (branchAndBound, graph, optimal_weight)
             generateCSV(resultado, dataset, numberNodes , 'bnb')
 
         resultado = runAlgorithm (twiceAroundTheTree, graph, optimal_weight)

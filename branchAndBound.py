@@ -58,7 +58,7 @@ def bound(A, n, limit, edgesLimit, solution, type):
             
             
         
-    return limit / 2, edgesLimit #divide por 2 para remover repetições
+    return sum / 2, edgesLimit #divide por 2 para remover repetições
 
 
 #Constuido com base no pseudo-codigo do slide visto em sala de aula
